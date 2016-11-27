@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+<hibernate-configuration>  
+  <session-factory>  
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.ogm.datastore.provider">mongodb</property>
+    <property name="hibernate.ogm.datastore.database">backalone</property>
+    <property name="hibernate.ogm.datastore.create_database">true</property>
+
+    <property name="hibernate.ogm.mongodb.host">localhost</property>
+    <property name="hibernate.ogm.mongodb.port">27017</property>
+
+    <property name="hibernate.search.default.directory_provider">filesystem</property>    
+    <property name="hibernate.search.default.indexBase">./Indexes</property>    
+    <property name="hibernate.search.default.locking_strategy">single</property>
+
+    <!-- Classes Mapeadas -->
+    
+    <mapping class="backAlone.model.vo.AstronautaVO"/>
+    <mapping class="backAlone.model.vo.HabilidadeVO"/>
+    <mapping class="backAlone.model.vo.NaveVO"/>
+    <mapping class="backAlone.model.vo.ParteVO"/>
+    <mapping class="backAlone.model.vo.PlanetaVO"/>
+    <mapping class="backAlone.model.vo.RecursoVO"/>
+    <mapping class="backAlone.model.vo.UniversoVO"/>
+
+  </session-factory>
+</hibernate-configuration>  

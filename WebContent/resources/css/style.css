@@ -1,0 +1,384 @@
+@import url('../resources/css/fonts.css');
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	overflow: hidden;
+}
+main{
+	width: 100%;
+	height: 100vh;
+	background: url('../resources/footage/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/*UNIVERSE*/
+.universe{
+	width: 100%;
+	height: 20px;
+	height: 65vh;
+}
+.universe .container{
+	transition: all 0.5s ease-in-out;
+}
+.planet{
+	position: absolute;
+	display: inline-block;
+	transition: all 0.3s ease-in-out;
+}
+.planet img{
+	display: inline-block;
+}
+.planet .inf{
+	display: inline-block;
+	width: 4.3vw;
+	height: 8vh;
+	position: absolute;
+	transform: translate(0, 50%);
+	left: calc(50% + 0.7vw);
+	bottom: 50%;
+	border-top: 0.3vh solid #4dbcab;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.planet .inf::before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 0;
+	height: 0;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	border-top: 0.35vw solid rgba(14,30,37,0.75);
+	border-bottom: 0.35vw solid transparent;
+	border-left: 0.35vw solid rgba(14,30,37,0.75);
+	border-right: 0.35vw solid transparent;
+}
+h4{
+	font-family: 'Bold';
+	font-size: 0.4em;
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+	padding: 7% 0;
+}
+
+
+.items{
+	text-align: center;
+}
+.item{
+	text-align: center;
+	width: 25%;
+	display: inline-block;
+}
+.item a{
+	text-decoration: none;
+	color: white;
+	background: #101318;
+	font-family: 'Regular';
+	font-size: 0.23vw;
+	padding: 5% 15%;
+	vertical-align: top;
+	display: inline-block;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+.item a:hover{
+	opacity: 0.3;
+}
+
+.item .thumb{
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 1vw;
+	height: 1vw;
+	box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+.items .corner-action{
+	width: 0.5vw;
+	height: 0.5vw;
+	font-size: 0.3vw;
+	font-family: 'Bold';
+	color: white;
+	background: #101318;
+	box-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+.items .corner-action span{
+	vertical-align: middle;
+}
+
+
+#Athlis{
+	width: 24%;
+	transform: translate(-25%, -50%);
+	top: 50%;
+	left: 50%;
+}
+#Lotus{
+	width: 17%;
+	transform: translate(-25%, -50%);
+	top: 35%;
+	right: 20%;
+}
+#three{
+	width: 28%;
+	transform: translate(-25%, -50%);
+	right: 0;
+	bottom: -15%;
+}
+#four{
+	width: 18%;
+	transform: translate(-25%, -50%);
+	bottom: 5%;
+	left: 30%;
+}
+#five{
+	width: 17%;
+	transform:  translate(-25%, -50%);
+	top: 37%;
+	left: 37%;
+}
+
+/*HUD*/
+.hud{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 35vh;
+	z-index: 3;
+}
+.container{
+	position: relative;
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+.hud::before{
+	content: '';
+	width: calc((100vw - 1200px) / 2);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 22vh;
+	background-color: rgba(14,30,37,0.75);
+	z-index: 2;
+}
+.content{	
+	height: 22vh;
+	vertical-align: bottom;
+	float: right;
+	margin-top:13vh;
+}
+#astronaut{
+	float: left;
+	height: 100%;
+	transform: translate(-50%, 0);
+}
+.hud-bg{
+	background-color: rgba(14,30,37,0.75);
+}
+.text{
+	color: white;
+	display: inline-block;
+}
+
+/*BRIEF*/
+.brief{
+	margin-left: -33vh;
+	text-align: right;
+	color: white;
+	width: 18vw;
+	height: 25vh;
+	margin-top: 4.7vh;
+	padding: 2vh 3vw;
+	border-top: 1.3vh solid #4dbcab;
+	float: left;
+}
+h1{
+	font-family: 'Bold';
+	font-size: 42px;
+}
+.brief span{
+	font-family: 'Italic';
+	font-size: 26px;
+}
+
+/*MENU*/
+.menu{
+	height: 100%;
+	display: inline-block;
+}
+.menu ul{
+	list-style: none;
+}
+.menu li{
+	position: relative;
+	height: 50%;
+	padding: 2.8vh 1.5vh;
+	border-width: 0.6vh 0.6vh 0 0.6vh;
+	border-style: solid;
+	border-color: #101318;
+	cursor: pointer;
+}
+.menu #inventory{
+	border-bottom: 0.6vh solid #101318;
+}
+.menu li img{
+	width: 4vh;
+	opacity: 0.75;
+	transition: all 0.3s ease-in-out;
+}
+.menu li img:hover{
+	opacity: 1;
+}
+.menu li::before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	width: 0;
+	height: 1vh;
+	background: #4dbcab;
+	transform: translate(-50%, 0);
+	transition: all 0.1s ease-in-out;
+}
+.menu li:hover::before{
+	width: calc(100% + 1.1vh);
+}
+#profile::before{
+	top: -0.6vh;
+}
+#inventory::before{
+	bottom: -0.6vh;
+}
+.menu .active::before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	width: calc(100% + 1.1vh);
+	height: 1vh;
+	background: #4dbcab;
+	transform: translate(-50%, 0);
+	transition: all 0.1s ease-in-out;
+}
+
+/*TAB*/
+.tabs{
+	display: inline-block;
+	vertical-align: top;
+	padding: 1.2vw;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+	/*PROFILE*/
+h2{
+	display: block;
+	font-family: 'Bold';
+	font-size: 26px;
+}
+
+.skill{
+	position: relative;
+	display: inline-block;
+	background-color: #0e1e25;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+	padding: 0 5% 0 0;
+	margin-top: 2vh;
+	margin-right: 3vh;
+}
+.thumb{
+	width: 9vh;
+	height: 9vh;
+	background-image: url('../resources/footage/slot-bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	float: left;
+	position: relative;
+}
+.thumb img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0 auto;
+}
+.thumb .gas{
+	height: 70%;
+}
+.thumb .oi{
+	height: 35%;
+}
+
+.skill .divider{
+	width: 1vh;
+	display: inline-block;
+}
+.skill .labels{
+	display: inline-block;
+	margin-top: 5%;
+}
+h3{
+	font-family: 'Bold';
+	font-size: 12px;
+}
+.skill span{
+	font-size: 26px;
+	font-family: 'Italic';
+	opacity: 0.65;
+}
+.corner-action{
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: translate(35%, 35%);
+	width: 2vw;
+	height: 2vw;
+	border-radius: 2vw;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+	transition: all 0.3s ease-in-out;
+}
+.skill .corner-action:hover{
+	bottom: 5px;
+}
+.skill .corner-action{
+	background-image: url('../resources/footage/lvl-up.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #0e1e25;
+	cursor: pointer;
+}
+
+	/*INVENTORY*/
+.inventory{
+	display: none;
+}
+.inv-items{
+	display: inline-block;
+	margin-top: 7%;
+	background-color: #0e1e25;
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+.inv-items .thumb span{
+	font-family: 'Bold';
+	color: white;
+	display: block;
+	text-align: center;
+	line-height: 200%;
+}
+.inv-items .thumb .corner-action{
+	background: #101318;
+}
+#tgas{
+	z-index: 2;
+}
+#tore{
+	z-index: 1;
+}

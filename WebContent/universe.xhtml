@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8"></meta>
+	<title>Back Alone</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="style.css" />
+	
+	<h:outputScript library="js" name="jquery.min.js" />
+	<h:outputScript library="js" name="jquery.zoomooz.min.js" />
+	<h:outputScript library="js" name="script.js" />
+	
+	<main>
+		<section class="universe zoomContainer">
+			<div class="container">
+				<ui:repeat items="#{universoBean.planetas}" var="p">
+				
+					<div class="zoomTarget planet" data-duration="1000" id="#{p.nome}">
+						<img src="#{p.img}" width="50%"></img>
+						<div class="inf hud-bg">
+							<h4 class="text"> <h:outputText value="#{p.nome}"></h:outputText> </h4>
+							<div class="items">
+								<ui:repeat items="#{p.recursos}" var="r">
+								
+									<div class="item">
+										<div class="thumb">
+											<img class="oi" src="#{r.img}"></img>
+											<div class="corner-action"><span> <h:outputText value="#{r.quantidade}"></h:outputText> </span></div>
+										</div>
+										<br/>
+										<a href="#">coletar</a>
+									</div>
+								
+								</ui:repeat>
+							</div>
+						</div>
+					</div>
+							
+				</ui:repeat>
+			</div>
+		</section>
+
+		<section class="hud">
+			<div class="container">
+				<img id="astronaut" src="resources/footage/astronaut.png"></img>
+				<div class="brief hud-bg">
+					<h1 class="text"> Mr. <h:outputText value="#{astronautaBean.nome}"></h:outputText> </h1>
+					<span class="text">SASS52-1 Piloto</span>
+				</div>
+				<div class="content hud-bg">
+					<div class="menu">
+						<ul>
+							<li id="profile" class="active"><img src="resources/footage/profile-icon.png"></img></li>
+							<li id="inventory"><img src="resources/footage/inventory-icon.png"></img></li>
+						</ul>
+					</div>
+					<div class="tabs">
+						<div class="tab profile">
+							<h2 class="text">Habilidades de Coleta</h2>
+							<div class="skill">
+								<div class="thumb">
+									<img class="gas" src="resources/footage/gas-tank.png"></img>
+								</div>
+								<div class="divider"></div>
+								<div class="labels">
+									<h3 class="text">GAS NATURAL</h3><br/>
+									<span class="text">Lvl. 1</span>
+								</div>
+								<div class="corner-action"></div>
+							</div>
+						</div>
+						<div class="tab inventory">
+							<h2 class="text">Inventário</h2>
+							<br/>
+							<div class="inv-items">
+								<div class="thumb" id="tgas">
+									<img class="gas" src="resources/footage/gas-tank.png"></img>
+									<div class="corner-action"><span>20</span></div>
+								</div>
+								<div class="thumb" id="tore">
+									<img class="oi" src="resources/footage/ore.png"></img>
+									<div class="corner-action"><span>13</span></div>
+								</div>
+								<div class="thumb">
+									<img class="oi" src="resources/footage/gold.png"></img>
+									<div class="corner-action"><span>6</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+</h:body>
+</html>

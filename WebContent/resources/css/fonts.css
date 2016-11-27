@@ -1,0 +1,16 @@
+@font-face{
+	font-family: BoldItalic;
+	src: url('../fonts/Gibson-BoldItalic.ttf');
+}
+@font-face{
+	font-family: Regular;
+	src: url('../fonts/Gibson-Regular.ttf');
+}
+@font-face{
+	font-family: Italic;
+	src: url('../fonts/Gibson-RegularItalic.ttf');
+}
+@font-face{
+	font-family: Bold;
+	src: url('../fonts/gibson-bold.ttf');
+}
