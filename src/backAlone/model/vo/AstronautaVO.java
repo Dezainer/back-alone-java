@@ -2,6 +2,7 @@ package backAlone.model.vo;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,19 +21,13 @@ public class AstronautaVO {
 	
 	private String nome;
 	
-	@OneToOne
-	private HabilidadeVO habGas;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<HabilidadeVO> habilidades;
 	
-	@OneToOne
-	private HabilidadeVO habFerro;
-	
-	@OneToOne
-	private HabilidadeVO habOuro;
-	
-	@OneToOne
+	@OneToOne(cascade= CascadeType.ALL)
 	private NaveVO nave;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<RecursoVO> inventario;
 	
 	
@@ -51,29 +46,13 @@ public class AstronautaVO {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public HabilidadeVO getHabGas() {
-		return habGas;
+
+	public List<HabilidadeVO> getHabilidades() {
+		return habilidades;
 	}
 
-	public void setHabGas(HabilidadeVO habGas) {
-		this.habGas = habGas;
-	}
-
-	public HabilidadeVO getHabFerro() {
-		return habFerro;
-	}
-
-	public void setHabFerro(HabilidadeVO habFerro) {
-		this.habFerro = habFerro;
-	}
-
-	public HabilidadeVO getHabOuro() {
-		return habOuro;
-	}
-
-	public void setHabOuro(HabilidadeVO habOuro) {
-		this.habOuro = habOuro;
+	public void setHabilidades(List<HabilidadeVO> habilidades) {
+		this.habilidades = habilidades;
 	}
 
 	public NaveVO getNave() {

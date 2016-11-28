@@ -1,5 +1,6 @@
 package backAlone.model.vo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +18,9 @@ public class UsuarioVO {
 	
 	private String nome;
 	
-	@OneToOne
+	private String senha;
+	
+	@OneToOne(cascade = CascadeType.ALL)
 	private UniversoVO universo;
 
 	
@@ -35,5 +38,21 @@ public class UsuarioVO {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public UniversoVO getUniverso() {
+		return universo;
+	}
+
+	public void setUniverso(UniversoVO universo) {
+		this.universo = universo;
 	}
 }

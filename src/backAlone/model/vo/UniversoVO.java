@@ -1,8 +1,12 @@
 package backAlone.model.vo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -15,25 +19,11 @@ public class UniversoVO {
 	@GenericGenerator(name="uuid", strategy="uuid2")
 	private String id;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private AstronautaVO astronauta;
 	
-	@OneToOne
-	private PlanetaVO athlis;
-	
-	@OneToOne
-	private PlanetaVO lotus;
-	
-	@OneToOne
-	private PlanetaVO orygon;
-	
-	@OneToOne
-	private PlanetaVO nymphus;
-	
-	@OneToOne
-	private PlanetaVO ember;
-	
-	private Integer tempo;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<PlanetaVO> planetas;
 	
 
 	public String getId() {
@@ -52,51 +42,11 @@ public class UniversoVO {
 		this.astronauta = astronauta;
 	}
 
-	public PlanetaVO getAthlis() {
-		return athlis;
+	public List<PlanetaVO> getPlanetas() {
+		return planetas;
 	}
 
-	public void setAthlis(PlanetaVO athlis) {
-		this.athlis = athlis;
-	}
-
-	public PlanetaVO getLotus() {
-		return lotus;
-	}
-
-	public void setLotus(PlanetaVO lotus) {
-		this.lotus = lotus;
-	}
-	
-	public PlanetaVO getOrygon() {
-		return orygon;
-	}
-
-	public void setOrygon(PlanetaVO orygon) {
-		this.orygon = orygon;
-	}
-
-	public PlanetaVO getNymphus() {
-		return nymphus;
-	}
-
-	public void setNymphus(PlanetaVO nymphus) {
-		this.nymphus = nymphus;
-	}
-
-	public PlanetaVO getEmber() {
-		return ember;
-	}
-
-	public void setEmber(PlanetaVO ember) {
-		this.ember = ember;
-	}
-
-	public Integer getTempo() {
-		return tempo;
-	}
-
-	public void setTempo(Integer tempo) {
-		this.tempo = tempo;
+	public void setPlanetas(List<PlanetaVO> planetas) {
+		this.planetas = planetas;
 	}
 }

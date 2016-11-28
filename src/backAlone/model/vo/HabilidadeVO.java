@@ -16,7 +16,7 @@ public class HabilidadeVO {
 	
 	private String nome;
 	
-	private String nivel;
+	private Integer nivel;
 	
 	private String img;
 
@@ -36,11 +36,11 @@ public class HabilidadeVO {
 		this.nome = nome;
 	}
 
-	public String getNivel() {
+	public Integer getNivel() {
 		return nivel;
 	}
 
-	public void setNivel(String nivel) {
+	public void setNivel(Integer nivel) {
 		this.nivel = nivel;
 	}
 

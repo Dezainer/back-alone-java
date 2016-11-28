@@ -23,6 +23,7 @@
     <mapping class="backAlone.model.vo.PlanetaVO"/>
     <mapping class="backAlone.model.vo.RecursoVO"/>
     <mapping class="backAlone.model.vo.UniversoVO"/>
+    <mapping class="backAlone.model.vo.UsuarioVO"/>
 
   </session-factory>
 </hibernate-configuration>  

@@ -376,9 +376,9 @@ h3{
 .inv-items .thumb .corner-action{
 	background: #101318;
 }
-#tgas{
+#itemGas{
 	z-index: 2;
 }
-#tore{
+#itemFerro{
 	z-index: 1;
 }

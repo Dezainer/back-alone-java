@@ -51,7 +51,7 @@
 			<div class="container">
 				<img id="astronaut" src="resources/footage/astronaut.png"></img>
 				<div class="brief hud-bg">
-					<h1 class="text"> Mr. <h:outputText value="#{astronautaBean.nome}"></h:outputText> </h1>
+					<h1 class="text"> Mr. <h:outputText value="#{astronautaBean.astronauta.nome}"></h:outputText> </h1>
 					<span class="text">SASS52-1 Piloto</span>
 				</div>
 				<div class="content hud-bg">
@@ -80,18 +80,14 @@
 							<h2 class="text">Inventário</h2>
 							<br/>
 							<div class="inv-items">
-								<div class="thumb" id="tgas">
-									<img class="oi" src="resources/footage/gas-tank.png"></img>
-									<div class="corner-action"><span>20</span></div>
-								</div>
-								<div class="thumb" id="tore">
-									<img class="oi" src="resources/footage/ore.png"></img>
-									<div class="corner-action"><span>13</span></div>
-								</div>
-								<div class="thumb">
-									<img class="oi" src="resources/footage/gold.png"></img>
-									<div class="corner-action"><span>6</span></div>
-								</div>
+								<ui:repeat value="#{astronautaBean.astronauta.inventario}" var="i">
+								
+									<div class="thumb" id="#{i.nome}">
+										<img class="oi" src="#{i.img}"></img>
+										<div class="corner-action"><span> <h:outputText value="#{i.quantidade}"></h:outputText> </span></div>
+									</div>
+								
+								</ui:repeat>
 							</div>
 						</div>
 					</div>
