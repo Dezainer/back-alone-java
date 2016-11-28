@@ -18,14 +18,15 @@
 	<main>
 		<section class="universe zoomContainer">
 			<div class="container">
-				<ui:repeat items="#{universoBean.planetas}" var="p">
-				
+			
+				<ui:repeat value="#{universoBean.planetas}" var="p">
+			
 					<div class="zoomTarget planet" data-duration="1000" id="#{p.nome}">
 						<img src="#{p.img}" width="50%"></img>
 						<div class="inf hud-bg">
 							<h4 class="text"> <h:outputText value="#{p.nome}"></h:outputText> </h4>
 							<div class="items">
-								<ui:repeat items="#{p.recursos}" var="r">
+								<ui:repeat value="#{p.recursos}" var="r">
 								
 									<div class="item">
 										<div class="thumb">
@@ -42,6 +43,7 @@
 					</div>
 							
 				</ui:repeat>
+				
 			</div>
 		</section>
 
@@ -79,7 +81,7 @@
 							<br/>
 							<div class="inv-items">
 								<div class="thumb" id="tgas">
-									<img class="gas" src="resources/footage/gas-tank.png"></img>
+									<img class="oi" src="resources/footage/gas-tank.png"></img>
 									<div class="corner-action"><span>20</span></div>
 								</div>
 								<div class="thumb" id="tore">

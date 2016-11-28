@@ -1,6 +1,6 @@
 package backAlone.beans;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -13,10 +13,12 @@ import backAlone.model.vo.RecursoVO;
 @RequestScoped
 public class UniversoBean {
 
-	private List<PlanetaVO> planetas;
+	private ArrayList<PlanetaVO> planetas = new ArrayList<PlanetaVO>();
 	
 	@PostConstruct
 	public void iniciarPlanetas(){
+		
+		//Criando Recursos
 		RecursoVO recGas = new RecursoVO();
 		
 		recGas.setNome("Gas");
@@ -35,20 +37,22 @@ public class UniversoBean {
 		recOuro.setQuantidade(9);
 		recOuro.setImg("resources/footage/gold.png");
 		
+		ArrayList<RecursoVO> recursos = new ArrayList<RecursoVO>();
+		
+		recursos.add(recGas);
+		recursos.add(recFerro);
+		recursos.add(recOuro);
+		
+		//Iniciando Planetas
+		
 		//Athlis
 		PlanetaVO athlis = new PlanetaVO();
 		
 		athlis.setNome("Athlis");
-		athlis.setImg("resources/footage/2.png");
+		athlis.setImg("resources/footage/1.png");
 		athlis.setPousado(true);
 		
-		List<RecursoVO> recursosAthlis = null;
-		
-		recursosAthlis.add(recGas);
-		recursosAthlis.add(recFerro);
-		recursosAthlis.add(recOuro);
-		
-		athlis.setRecursos(recursosAthlis);
+		athlis.setRecursos(recursos);
 		
 		//Lotus
 		PlanetaVO lotus = new PlanetaVO();
@@ -57,24 +61,48 @@ public class UniversoBean {
 		lotus.setImg("resources/footage/2.png");
 		lotus.setPousado(false);
 		
-		List<RecursoVO> recursosLotus = null;
+		lotus.setRecursos(recursos);
 		
-		recursosLotus.add(recGas);
-		recursosLotus.add(recFerro);
-		recursosLotus.add(recOuro);
+		//Orygon
+		PlanetaVO orygon = new PlanetaVO();
 		
-		athlis.setRecursos(recursosLotus);
+		orygon.setNome("Orygon");
+		orygon.setImg("resources/footage/3.png");
+		orygon.setPousado(false);
 		
-		//Create the Universe
+		orygon.setRecursos(recursos);
+		
+		//Nymphus
+		PlanetaVO nymphus = new PlanetaVO();
+		
+		nymphus.setNome("Nymphus");
+		nymphus.setImg("resources/footage/4.png");
+		nymphus.setPousado(false);
+		
+		nymphus.setRecursos(recursos);
+		
+		//Ember
+		PlanetaVO ember = new PlanetaVO();
+		
+		ember.setNome("Ember");
+		ember.setImg("resources/footage/5.png");
+		ember.setPousado(false);
+		
+		ember.setRecursos(recursos);
+		
+		//Iniciando o Universo
 		this.planetas.add(athlis);
 		this.planetas.add(lotus);
+		this.planetas.add(orygon);
+		this.planetas.add(nymphus);
+		this.planetas.add(ember);
 	}
 
-	public List<PlanetaVO> getPlanetas() {
+	public ArrayList<PlanetaVO> getPlanetas() {
 		return planetas;
 	}
 
-	public void setPlanetas(List<PlanetaVO> planetas) {
+	public void setPlanetas(ArrayList<PlanetaVO> planetas) {
 		this.planetas = planetas;
 	}
 }
